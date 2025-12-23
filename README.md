@@ -9,9 +9,9 @@ Focus on clear solutions, core ideas, and complexity analysis.
 
 | Category      | Count |
 |---------------|-------|
-| DataStructure | 7     |
+| DataStructure | 14    |
 | Hot100        | 3     |
-| Total         | 10    |
+| Total         | 17    |
 
 ---
 
@@ -33,6 +33,18 @@ Focus on clear solutions, core ideas, and complexity analysis.
 | 2559 | 统计范围内的元音字符串数 | [Code](DataStructure/PrefixSum/2559_统计范围内的元音字符串数) |
 | 3152 | 特殊数组Ii | [Code](DataStructure/PrefixSum/3152_特殊数组II) |
 | 3427 | 变长子数组求和 | [Code](DataStructure/PrefixSum/3427_变长子数组求和) |
+
+### Stack
+
+| # | Title | Path |
+|---|-------|------|
+| 682 | 棒球比赛 | [Code](DataStructure/Stack/682_棒球比赛) |
+| 844 | 比较含退格的字符串 | [Code](DataStructure/Stack/844_比较含退格的字符串) |
+| 946 | 验证栈序列 | [Code](DataStructure/Stack/946_验证栈序列) |
+| 1441 | 用栈操作构建数组 | [Code](DataStructure/Stack/1441_用栈操作构建数组) |
+| 1472 | 设计浏览器历史记录 | [Code](DataStructure/Stack/1472_设计浏览器历史记录) |
+| 2390 | 从字符串中移除星号 | [Code](DataStructure/Stack/2390_从字符串中移除星号) |
+| 3412 | 计算字符串的镜像分数 | [Code](DataStructure/Stack/3412_计算字符串的镜像分数) |
 
 ---
 
