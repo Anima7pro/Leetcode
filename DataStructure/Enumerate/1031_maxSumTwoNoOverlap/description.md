@@ -33,7 +33,7 @@ https://leetcode.cn/problems/maximum-sum-of-two-non-overlapping-subarrays/
 
 ## Constraints
 
--- 1 <= firstLen, secondLen <= 1000
--- 2 <= firstLen + secondLen <= 1000
--- firstLen + secondLen <= nums.length <= 1000
--- 0 <= nums[i] <= 1000
+- $$1 <= firstLen, secondLen <= 1000$$
+- $$2 <= firstLen + secondLen <= 1000$$
+- $$firstLen + secondLen <= nums.length <= 1000$$
+- $$0 <= nums[i] <= 1000$$
