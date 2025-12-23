@@ -1,7 +1,7 @@
 # 3152. 特殊数组Ii
 
 ## LeetCode Link
-https://leetcode.cn/problems/特殊数组ii/
+https://leetcode.cn/problems/special-array-ii/
 
 ---
 
