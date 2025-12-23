@@ -38,23 +38,13 @@ Focus on clear solutions, core ideas, and complexity analysis.
 
 ## Hot100
 
-### 1_两数之和
+### Harsh
 
 | # | Title | Path |
 |---|-------|------|
-| 1 | 两数之和 | [Code](Hot100/1_两数之和) |
-
-### 2_字母异位词分组
-
-| # | Title | Path |
-|---|-------|------|
-| 2 | 字母异位词分组 | [Code](Hot100/2_字母异位词分组) |
-
-### 3_最长连续序列
-
-| # | Title | Path |
-|---|-------|------|
-| 3 | 最长连续序列 | [Code](Hot100/3_最长连续序列) |
+| 1 | 两数之和 | [Code](Hot100/Harsh/1_两数之和) |
+| 2 | 字母异位词分组 | [Code](Hot100/Harsh/2_字母异位词分组) |
+| 3 | 最长连续序列 | [Code](Hot100/Harsh/3_最长连续序列) |
 
 ---
 
