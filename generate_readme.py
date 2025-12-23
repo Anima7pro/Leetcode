@@ -1,7 +1,24 @@
 import os
+from collections import defaultdict
 
 ROOT_DIR = os.getcwd()
 README_FILE = "README.md"
+
+
+def group_by_subcategory(problem_dirs, category):
+    groups = defaultdict(list)
+
+    for p in problem_dirs:
+        parts = p.replace("\\", "/").split("/")
+        if len(parts) >= 2 and parts[0] == category:
+            subcategory = parts[1]
+        else:
+            subcategory = "Others"
+
+        groups[subcategory].append(p)
+
+    return dict(groups)
+
 
 def find_problem_dirs(base_dir):
     """
@@ -16,6 +33,17 @@ def find_problem_dirs(base_dir):
             dirs.clear()
 
     return sorted(problem_dirs)
+
+def sort_key(path):
+    """
+    按题号数值排序：0001, 2, 10, 1031
+    """
+    name = os.path.basename(path)
+    try:
+        return int(name.split("_", 1)[0])
+    except ValueError:
+        return float("inf")
+
 
 def parse_problem_name(folder_name):
     """
@@ -65,16 +93,23 @@ def generate_readme():
         # Categories
         for cat, problems in category_problems.items():
             f.write(f"## {cat}\n\n")
-            f.write("| # | Title | Path |\n")
-            f.write("|---|-------|------|\n")
 
-            for p in problems:
-                folder = os.path.basename(p)
-                num, title = parse_problem_name(folder)
-                rel_path = p.replace("\\", "/")
-                f.write(f"| {num} | {title} | [Code]({rel_path}) |\n")
+            sub_groups = group_by_subcategory(problems, cat)
 
-            f.write("\n---\n\n")
+            for subcat in sorted(sub_groups):
+                f.write(f"### {subcat}\n\n")
+                f.write("| # | Title | Path |\n")
+                f.write("|---|-------|------|\n")
+
+                for p in sorted(sub_groups[subcat], key=sort_key):
+                    folder = os.path.basename(p)
+                    num, title = parse_problem_name(folder)
+                    rel_path = p.replace("\\", "/")
+                    f.write(f"| {num} | {title} | [Code]({rel_path}) |\n")
+
+                f.write("\n")
+            f.write("---\n\n")
+
 
         # Notes
         f.write("## Notes\n\n")
