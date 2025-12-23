@@ -1,69 +1,86 @@
 import os
 
-# 配置你的分类目录
-categories = {
-    "Enumerate": "Enumerate",
-    "SlidingWindow": "SlidingWindow",
-    "DataStructure": "DataStructure"
-}
+ROOT_DIR = os.getcwd()
+README_FILE = "README.md"
 
-readme_file = "README.md"
+def find_problem_dirs(base_dir):
+    """
+    递归查找所有包含 solution.py 的目录
+    """
+    problem_dirs = []
+
+    for root, dirs, files in os.walk(base_dir):
+        if "solution.py" in files:
+            problem_dirs.append(root)
+            # 不再向下递归
+            dirs.clear()
+
+    return sorted(problem_dirs)
+
+def parse_problem_name(folder_name):
+    """
+    解析题号和标题
+    """
+    if "_" in folder_name:
+        num, title = folder_name.split("_", 1)
+        title = title.replace("_", " ").title()
+    else:
+        num = folder_name
+        title = folder_name.replace("_", " ").title()
+    return num, title
 
 def generate_readme():
-    # 统计每个分类题目数量
-    category_counts = {}
-    total_count = 0
-    for display_name, folder in categories.items():
-        if os.path.exists(folder):
-            problems = [d for d in os.listdir(folder) if os.path.isdir(os.path.join(folder, d))]
-            category_counts[display_name] = len(problems)
-            total_count += len(problems)
-        else:
-            category_counts[display_name] = 0
+    categories = [
+        d for d in os.listdir(ROOT_DIR)
+        if os.path.isdir(d) and not d.startswith(".") and d not in ["__pycache__"]
+    ]
 
-    # 计算 Progress 表格列宽
-    max_cat_len = max(len(cat) for cat in list(categories.keys()) + ["Total", "Category"])
-    max_count_len = max(len(str(count)) for count in list(category_counts.values()) + [total_count, len("Count")])
+    progress = {}
+    category_problems = {}
 
-    with open(readme_file, "w", encoding="utf-8") as f:
-        # 顶部介绍
+    for cat in categories:
+        problem_dirs = find_problem_dirs(cat)
+        category_problems[cat] = problem_dirs
+        progress[cat] = len(problem_dirs)
+
+    total_count = sum(progress.values())
+
+    max_cat_len = max(len("Category"), *(len(cat) for cat in progress))
+    max_count_len = max(len("Count"), *(len(str(v)) for v in progress.values()), len(str(total_count)))
+
+    with open(README_FILE, "w", encoding="utf-8") as f:
+        # Header
         f.write("# LeetCode Solutions\n\n")
-        f.write("Personal LeetCode practice repository.\nFocus on clear solutions, core ideas, and complexity analysis.\n\n---\n\n")
+        f.write("Personal LeetCode practice repository.\n")
+        f.write("Focus on clear solutions, core ideas, and complexity analysis.\n\n---\n\n")
 
         # Progress
         f.write("## Progress\n\n")
         f.write(f"| {'Category'.ljust(max_cat_len)} | {'Count'.ljust(max_count_len)} |\n")
         f.write(f"|{'-' * (max_cat_len + 2)}|{'-' * (max_count_len + 2)}|\n")
-        for cat in categories.keys():
-            f.write(f"| {cat.ljust(max_cat_len)} | {str(category_counts[cat]).ljust(max_count_len)} |\n")
+        for cat, cnt in progress.items():
+            f.write(f"| {cat.ljust(max_cat_len)} | {str(cnt).ljust(max_count_len)} |\n")
         f.write(f"| {'Total'.ljust(max_cat_len)} | {str(total_count).ljust(max_count_len)} |\n\n---\n\n")
 
-        # 每个分类题目表格
-        for display_name, folder in categories.items():
-            f.write(f"## {display_name}\n\n")
-            f.write("| # | Title | Solution |\n")
-            f.write("|---|-------|----------|\n")
-            if os.path.exists(folder):
-                problems = [d for d in os.listdir(folder) if os.path.isdir(os.path.join(folder, d))]
-                problems.sort()
-                for prob in problems:
-                    if "_" in prob:
-                        num, title = prob.split("_", 1)
-                        title = title.replace("_", " ").title()
-                    else:
-                        num, title = prob, prob
-                    link = f"{folder}/{prob}"
-                    f.write(f"| {num} | {title} | [Code]({link}) |\n")
+        # Categories
+        for cat, problems in category_problems.items():
+            f.write(f"## {cat}\n\n")
+            f.write("| # | Title | Path |\n")
+            f.write("|---|-------|------|\n")
+
+            for p in problems:
+                folder = os.path.basename(p)
+                num, title = parse_problem_name(folder)
+                rel_path = p.replace("\\", "/")
+                f.write(f"| {num} | {title} | [Code]({rel_path}) |\n")
+
             f.write("\n---\n\n")
 
         # Notes
         f.write("## Notes\n\n")
         f.write("- Language: Python\n")
-        f.write("- Focus on:\n")
-        f.write("  - Correctness\n")
-        f.write("  - Time / Space complexity\n")
-        f.write("  - Clean logic\n")
-        f.write("- Solutions are written after independent thinking.\n\n---\n\n")
+        f.write("- Only directories containing `solution.py` are counted as solved problems\n")
+        f.write("- Directory structure may be nested under each category\n\n---\n\n")
 
         # TODO
         f.write("## TODO\n\n")
@@ -72,4 +89,4 @@ def generate_readme():
 
 if __name__ == "__main__":
     generate_readme()
-    print(f"{readme_file} generated successfully!")
+    print("README.md generated successfully.")
