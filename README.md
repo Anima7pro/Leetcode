@@ -9,9 +9,9 @@ Focus on clear solutions, core ideas, and complexity analysis.
 
 | Category      | Count |
 |---------------|-------|
-| DataStructure | 14    |
-| Hot100        | 3     |
-| Total         | 17    |
+| DataStructure | 19    |
+| Hot100        | 8     |
+| Total         | 27    |
 
 ---
 
@@ -23,6 +23,7 @@ Focus on clear solutions, core ideas, and complexity analysis.
 |---|-------|------|
 | 454 | Foursumcount | [Code](DataStructure/Enumerate/454_fourSumCount) |
 | 1031 | Maxsumtwonooverlap | [Code](DataStructure/Enumerate/1031_maxSumTwoNoOverlap) |
+| 3583 | 统计特殊三元组 | [Code](DataStructure/Enumerate/3583_统计特殊三元组) |
 
 ### PrefixSum
 
@@ -34,11 +35,20 @@ Focus on clear solutions, core ideas, and complexity analysis.
 | 3152 | 特殊数组Ii | [Code](DataStructure/PrefixSum/3152_特殊数组II) |
 | 3427 | 变长子数组求和 | [Code](DataStructure/PrefixSum/3427_变长子数组求和) |
 
+### Qeque
+
+| # | Title | Path |
+|---|-------|------|
+| 933 | 最近的请求次数 | [Code](DataStructure/Qeque/933_最近的请求次数) |
+| 950 | 按递增顺序显示卡牌 | [Code](DataStructure/Qeque/950_按递增顺序显示卡牌) |
+
 ### Stack
 
 | # | Title | Path |
 |---|-------|------|
+| 283 | 移动零 | [Code](DataStructure/Stack/283_移动零) |
 | 682 | 棒球比赛 | [Code](DataStructure/Stack/682_棒球比赛) |
+| 739 | 每日温度 | [Code](DataStructure/Stack/739_每日温度) |
 | 844 | 比较含退格的字符串 | [Code](DataStructure/Stack/844_比较含退格的字符串) |
 | 946 | 验证栈序列 | [Code](DataStructure/Stack/946_验证栈序列) |
 | 1441 | 用栈操作构建数组 | [Code](DataStructure/Stack/1441_用栈操作构建数组) |
@@ -57,6 +67,21 @@ Focus on clear solutions, core ideas, and complexity analysis.
 | 1 | 两数之和 | [Code](Hot100/Harsh/1_两数之和) |
 | 2 | 字母异位词分组 | [Code](Hot100/Harsh/2_字母异位词分组) |
 | 3 | 最长连续序列 | [Code](Hot100/Harsh/3_最长连续序列) |
+
+### SlidingWindow
+
+| # | Title | Path |
+|---|-------|------|
+| 3 | 无重复字符的最长字串 | [Code](Hot100/SlidingWindow/3_无重复字符的最长字串) |
+| 438 | 找到字符串中所有字母异位词 | [Code](Hot100/SlidingWindow/438_找到字符串中所有字母异位词) |
+
+### TwoPointers
+
+| # | Title | Path |
+|---|-------|------|
+| 11 | 盛水最多的容器 | [Code](Hot100/TwoPointers/11_盛水最多的容器) |
+| 15 | 三数之和 | [Code](Hot100/TwoPointers/15_三数之和) |
+| 283 | 移动零 | [Code](Hot100/TwoPointers/283_移动零) |
 
 ---
 
