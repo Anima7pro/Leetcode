@@ -10,8 +10,8 @@ Focus on clear solutions, core ideas, and complexity analysis.
 | Category      | Count |
 |---------------|-------|
 | DataStructure | 19    |
-| Hot100        | 8     |
-| Total         | 27    |
+| Hot100        | 17    |
+| Total         | 36    |
 
 ---
 
@@ -68,12 +68,31 @@ Focus on clear solutions, core ideas, and complexity analysis.
 | 2 | 字母异位词分组 | [Code](Hot100/Harsh/2_字母异位词分组) |
 | 3 | 最长连续序列 | [Code](Hot100/Harsh/3_最长连续序列) |
 
+### Matrix
+
+| # | Title | Path |
+|---|-------|------|
+| 48 | 旋转图像 | [Code](Hot100/Matrix/48_旋转图像) |
+| 54 | 螺旋矩阵 | [Code](Hot100/Matrix/54_螺旋矩阵) |
+| 73 | 矩阵置零 | [Code](Hot100/Matrix/73_矩阵置零) |
+
 ### SlidingWindow
 
 | # | Title | Path |
 |---|-------|------|
 | 3 | 无重复字符的最长字串 | [Code](Hot100/SlidingWindow/3_无重复字符的最长字串) |
 | 438 | 找到字符串中所有字母异位词 | [Code](Hot100/SlidingWindow/438_找到字符串中所有字母异位词) |
+
+### SubString
+
+| # | Title | Path |
+|---|-------|------|
+| 53 | 最大子数组和 | [Code](Hot100/SubString/53_最大子数组和) |
+| 56 | 合并区间 | [Code](Hot100/SubString/56_合并区间) |
+| 189 | 轮转数组 | [Code](Hot100/SubString/189_轮转数组) |
+| 238 | 除自身以外数组的乘积 | [Code](Hot100/SubString/238_除自身以外数组的乘积) |
+| 239 | 滑动窗口最大值 | [Code](Hot100/SubString/239_滑动窗口最大值) |
+| 560 | 和为K的子数组 | [Code](Hot100/SubString/560_和为K的子数组) |
 
 ### TwoPointers
 
