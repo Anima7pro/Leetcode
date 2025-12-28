@@ -9,13 +9,27 @@ Focus on clear solutions, core ideas, and complexity analysis.
 
 | Category      | Count |
 |---------------|-------|
-| Hot100        | 27    |
+| Hot100        | 37    |
 | DataStructure | 19    |
-| Total         | 46    |
+| Total         | 56    |
 
 ---
 
 ## Hot100
+
+### BinaryTree
+
+| # | Title | Path |
+|---|-------|------|
+| 94 | 二叉树的中序遍历 | [Code](Hot100/BinaryTree/94_二叉树的中序遍历) |
+| 98 | 验证二叉搜索时 | [Code](Hot100/BinaryTree/98_验证二叉搜索时) |
+| 101 | 对称二叉树 | [Code](Hot100/BinaryTree/101_对称二叉树) |
+| 104 | 二叉树的最大深度 | [Code](Hot100/BinaryTree/104_二叉树的最大深度) |
+| 108 | 将有序数组转换为二叉搜索树 | [Code](Hot100/BinaryTree/108_将有序数组转换为二叉搜索树) |
+| 114 | 二叉树展开为链表 | [Code](Hot100/BinaryTree/114_二叉树展开为链表) |
+| 124 | 二叉树中的最大路径和* | [Code](Hot100/BinaryTree/124_二叉树中的最大路径和*) |
+| 199 | 二叉树的右视图 | [Code](Hot100/BinaryTree/199_二叉树的右视图) |
+| 230 | 二叉搜索树中的第K小的元素 | [Code](Hot100/BinaryTree/230_二叉搜索树中的第K小的元素) |
 
 ### Harsh
 
@@ -32,6 +46,7 @@ Focus on clear solutions, core ideas, and complexity analysis.
 | 2 | 两数相加 | [Code](Hot100/LInkedList/2_两数相加) |
 | 19 | 删除链表的倒数第N个节点 | [Code](Hot100/LInkedList/19_删除链表的倒数第n个节点) |
 | 21 | 合并两个有序链表 | [Code](Hot100/LInkedList/21_合并两个有序链表) |
+| 23 | 合并K个升序链表 | [Code](Hot100/LInkedList/23_合并K个升序链表) |
 | 138 | 随机链表的复制 | [Code](Hot100/LInkedList/138_随机链表的复制) |
 | 141 | 环形链表 | [Code](Hot100/LInkedList/141_环形链表) |
 | 142 | 环形链表Ii | [Code](Hot100/LInkedList/142_环形链表II) |

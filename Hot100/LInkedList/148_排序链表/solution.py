@@ -1,3 +1,12 @@
+# Definition for singly-linked list.
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+from typing import Optional
+from typing import List
+
 class Solution:
     def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
         slow = fast = head
@@ -10,7 +19,7 @@ class Solution:
 
     
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
-        cur = dummy = ListNode(next = head)
+        cur = dummy = ListNode()
         while list1 and list2:
             if list1.val < list2.val:
                 cur.next = list1
